@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    com.quorum.consensus: istanbul
+    kompose.cmd: kompose convert
+    kompose.version: 1.17.0 (a74acad)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: node7
+  name: node7
+spec:
+  ports:
+  - name: "22006"
+    port: 22006
+    targetPort: 8545
+  selector:
+    io.kompose.service: node7
+status:
+  loadBalancer: {}
